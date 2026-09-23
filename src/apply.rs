@@ -2,7 +2,7 @@ use crate::keys::load_public_key;
 use crate::manifest::Manifest;
 use crate::Error;
 use ed25519_dalek::{Signature, Verifier, VerifyingKey};
-use sha2::{Digest, Sha256};
+use sha2::{Digest, Sha512};
 use std::fs;
 use std::io::Read;
 use std::path::{Path, PathBuf};
@@ -82,18 +82,18 @@ where
         if dest.is_file() {
             let mut cur = Vec::new();
             fs::File::open(&dest)?.read_to_end(&mut cur)?;
-            let got = hex::encode(Sha256::digest(&cur));
-            if got == f.sha256 {
+            let got = hex::encode(Sha512::digest(&cur));
+            if got == f.sha512 {
                 report.skipped += 1;
                 continue;
             }
         }
-        let data = fetch(&f.sha256)?;
-        let got = hex::encode(Sha256::digest(&data));
-        if got != f.sha256 {
+        let data = fetch(&f.sha512)?;
+        let got = hex::encode(Sha512::digest(&data));
+        if got != f.sha512 {
             return Err(Error::HashMismatch {
                 path: f.path.clone(),
-                expected: f.sha256.clone(),
+                expected: f.sha512.clone(),
                 got,
             });
         }

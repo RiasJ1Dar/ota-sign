@@ -23,9 +23,9 @@ pub enum Error {
     HashMismatch {
         /// Relative path in the install tree.
         path: String,
-        /// Expected sha256 hex.
+        /// Expected sha512 hex.
         expected: String,
-        /// Actual sha256 hex.
+        /// Actual sha512 hex.
         got: String,
     },
 }

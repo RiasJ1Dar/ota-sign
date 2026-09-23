@@ -2,7 +2,7 @@ use crate::keys::load_signing_key;
 use crate::manifest::{FileEntry, Manifest};
 use crate::Error;
 use ed25519_dalek::Signer;
-use sha2::{Digest, Sha256};
+use sha2::{Digest, Sha512};
 use std::fs;
 use std::io::Read;
 use std::path::{Path, PathBuf};
@@ -30,7 +30,7 @@ pub fn publish_dir(
         let rel_s = rel.to_string_lossy().replace('\\', "/");
         let mut data = Vec::new();
         fs::File::open(&abs)?.read_to_end(&mut data)?;
-        let hash = hex::encode(Sha256::digest(&data));
+        let hash = hex::encode(Sha512::digest(&data));
         let size = data.len() as u64;
         let blob = blobs.join(format!("{hash}.bin"));
         if !blob.exists() {
@@ -38,14 +38,14 @@ pub fn publish_dir(
         }
         entries.push(FileEntry {
             path: rel_s,
-            sha256: hash,
+            sha512: hash,
             size,
         });
     }
     entries.sort_by(|a, b| a.path.cmp(&b.path));
 
     let manifest = Manifest {
-        format: 1,
+        format: 2,
         app: app.to_string(),
         version: version.to_string(),
         files: entries,

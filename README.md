@@ -2,7 +2,7 @@
 
 # ota-sign
 
-Відкритий інкрементний OTA: підписаний Ed25519 маніфест + блоби за SHA-256.
+Відкритий інкрементний OTA: підписаний Ed25519 маніфест + блоби за SHA-512.
 CLI для автора і бібліотека для вбудовування в `.exe`.
 
 Натхненно ідеєю `szi-as-ota` (качати лише змінені файли), але **без** пропрієтарного
@@ -10,7 +10,7 @@ CLI для автора і бібліотека для вбудовування 
 
 ## Формат
 
-Див. [docs/format.md](docs/format.md): `manifest.json` + `manifest.sig` + `blobs/<sha256>.bin`.
+Див. [docs/format.md](docs/format.md): `manifest.json` + `manifest.sig` + `blobs/<sha512>.bin`.
 
 ## CLI
 

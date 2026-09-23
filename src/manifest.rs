@@ -6,16 +6,16 @@ use serde::{Deserialize, Serialize};
 pub struct FileEntry {
     /// Relative path using `/`, no `..`.
     pub path: String,
-    /// Lowercase hex SHA-256 of plaintext.
-    pub sha256: String,
+    /// Lowercase hex SHA-512 of plaintext.
+    pub sha512: String,
     /// Size in bytes.
     pub size: u64,
 }
 
-/// Signed update manifest (format 1).
+/// Signed update manifest (format 2).
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Manifest {
-    /// Format version; must be `1`.
+    /// Format version; must be `2`.
     pub format: u32,
     /// Application id (informational).
     pub app: String,
@@ -28,7 +28,7 @@ pub struct Manifest {
 impl Manifest {
     /// Validate format and paths.
     pub fn validate(&self) -> Result<(), Error> {
-        if self.format != 1 {
+        if self.format != 2 {
             return Err(Error::Invalid(format!(
                 "unsupported format {}",
                 self.format
@@ -39,8 +39,8 @@ impl Manifest {
         }
         for f in &self.files {
             validate_path(&f.path)?;
-            if f.sha256.len() != 64 || !f.sha256.chars().all(|c| c.is_ascii_hexdigit()) {
-                return Err(Error::Invalid(format!("bad sha256 for {}", f.path)));
+            if f.sha512.len() != 128 || !f.sha512.chars().all(|c| c.is_ascii_hexdigit()) {
+                return Err(Error::Invalid(format!("bad sha512 for {}", f.path)));
             }
         }
         Ok(())

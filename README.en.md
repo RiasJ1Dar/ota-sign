@@ -2,7 +2,7 @@
 
 # ota-sign
 
-Open incremental OTA: Ed25519-signed manifest + SHA-256 content-addressed blobs.
+Open incremental OTA: Ed25519-signed manifest + SHA-512 content-addressed blobs.
 Publisher CLI and embeddable client library.
 
 Inspired by the *download only what changed* idea behind `szi-as-ota`, without the
