@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "72935ceb-b7eb-4301-84a9-4e2bba015d14",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\candidate.json",
+  "output": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+  "specification": {
+    "sha256": "f4096ba57be38be54b6211b4e51841a66791f24a09f5c97963f5ca613aab5cb6",
+    "bytes": 7648
+  },
+  "artifact": {
+    "sha256": "da54e72d0236da34119be69adfa3f668cd5ed4599b6361406210698da58e2402",
+    "bytes": 841762
+  }
+}

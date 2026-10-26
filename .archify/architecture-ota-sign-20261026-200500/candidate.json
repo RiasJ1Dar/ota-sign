@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "ota-sign: підписаний інкрементний канал оновлень",
+    "output": ".archify/architecture-ota-sign-20261026-200500/ota-sign.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/RiasJ1Dar/ota-sign.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "0f29dfeffc537a545de853f4b267a09a7496a599"
+    }
+  },
+  "layout": {
+    "mode": "grid",
+    "origin": [40, 40],
+    "cols": 5,
+    "cellW": 125,
+    "cellH": 70,
+    "gapX": 70,
+    "gapY": 90
+  },
+  "components": [
+    {
+      "id": "author", "type": "external", "label": "Автор релізу", "sublabel": "середовище релізу",
+      "row": 0, "col": 0,
+      "sources": [{ "path": "README.md", "line": 29, "end_line": 50, "label": "перший канал" }]
+    },
+    {
+      "id": "cli", "type": "backend", "label": "ota-sign CLI", "sublabel": "clap, 4 команди",
+      "row": 0, "col": 1,
+      "sources": [{ "path": "src/bin/ota-sign.rs", "line": 13, "end_line": 62 }]
+    },
+    {
+      "id": "keygen", "type": "security", "label": "keygen", "sublabel": "Ed25519, OsRng",
+      "row": 0, "col": 2,
+      "sources": [{ "path": "src/keys.rs", "line": 17, "end_line": 28 }]
+    },
+    {
+      "id": "secret", "type": "security", "label": "*.secret", "sublabel": "не йде в Git",
+      "row": 0, "col": 3,
+      "sources": [{ "path": "src/keys.rs", "line": 20, "end_line": 23, "label": "hex 32 байти" }]
+    },
+    {
+      "id": "public", "type": "security", "label": "*.public", "sublabel": "їде з клієнтом",
+      "row": 0, "col": 4,
+      "sources": [{ "path": "src/keys.rs", "line": 41, "end_line": 48, "label": "load_public_key" }]
+    },
+    {
+      "id": "srcdir", "type": "database", "label": "dist/", "sublabel": "файли релізу",
+      "row": 1, "col": 0,
+      "sources": [{ "path": "src/publish.rs", "line": 65, "end_line": 80, "label": "обхід, крім .*" }]
+    },
+    {
+      "id": "publish", "type": "backend", "label": "publish_dir", "sublabel": "SHA-512 блоби",
+      "row": 1, "col": 1,
+      "sources": [
+        { "path": "src/publish.rs", "line": 11, "end_line": 63 },
+        { "path": "src/manifest.rs", "line": 28, "end_line": 54, "label": "validate, format 2" }
+      ]
+    },
+    {
+      "id": "channel", "type": "database", "label": "channel/", "sublabel": "manifest + sig",
+      "row": 2, "col": 1,
+      "sources": [{ "path": "src/publish.rs", "line": 55, "end_line": 61, "label": "запис маніфесту" }]
+    },
+    {
+      "id": "http", "type": "external", "label": "HTTP(S) база", "sublabel": "ureq GET",
+      "row": 2, "col": 2,
+      "sources": [{ "path": "src/apply.rs", "line": 122, "end_line": 131 }]
+    },
+    {
+      "id": "clientApp", "type": "external", "label": "Застосунок", "sublabel": "вбудована lib",
+      "row": 3, "col": 0,
+      "sources": [{ "path": "src/lib.rs", "line": 11, "end_line": 15, "label": "публічний API" }]
+    },
+    {
+      "id": "apply", "type": "backend", "label": "apply", "sublabel": "dir або url",
+      "row": 3, "col": 1,
+      "sources": [
+        { "path": "src/apply.rs", "line": 22, "end_line": 37, "label": "apply_from_dir" },
+        { "path": "src/apply.rs", "line": 40, "end_line": 56, "label": "apply_from_url" }
+      ]
+    },
+    {
+      "id": "verify", "type": "security", "label": "verify_manifest", "sublabel": "Ed25519 verify",
+      "row": 3, "col": 2,
+      "sources": [{ "path": "src/apply.rs", "line": 58, "end_line": 64 }]
+    },
+    {
+      "id": "materialize", "type": "backend", "label": "materialize", "sublabel": "tmp → rename",
+      "row": 4, "col": 1,
+      "sources": [
+        { "path": "src/apply.rs", "line": 66, "end_line": 109 },
+        { "path": "src/apply.rs", "line": 111, "end_line": 120, "label": "safe_join" }
+      ]
+    },
+    {
+      "id": "install", "type": "database", "label": "install/", "sublabel": "дерево файлів",
+      "row": 4, "col": 2,
+      "sources": [{ "path": "src/apply.rs", "line": 100, "end_line": 106, "label": "атомарний запис" }]
+    }
+  ],
+  "connections": [
+    { "id": "author-cli", "from": "author", "to": "cli", "variant": "emphasis" },
+    { "id": "cli-keygen", "from": "cli", "to": "keygen", "label": "keygen" },
+    { "id": "keygen-secret", "from": "keygen", "to": "secret", "label": "secret", "variant": "security" },
+    { "id": "keygen-public", "from": "keygen", "to": "public", "label": "public", "variant": "security", "fromSide": "bottom", "toSide": "left" },
+    { "id": "cli-publish", "from": "cli", "to": "publish", "label": "publish", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
+    { "id": "secret-publish", "from": "secret", "to": "publish", "label": "підпис", "variant": "security", "fromSide": "bottom", "toSide": "right" },
+    { "id": "src-publish", "from": "srcdir", "to": "publish", "label": "читає", "variant": "emphasis" },
+    { "id": "publish-channel", "from": "publish", "to": "channel", "label": "blobs", "variant": "emphasis", "fromSide": "bottom", "toSide": "top" },
+    { "id": "channel-http", "from": "channel", "to": "http", "label": "upload", "variant": "dashed" },
+    { "id": "channel-apply", "from": "channel", "to": "apply", "label": "локально", "fromSide": "bottom", "toSide": "top" },
+    { "id": "http-apply", "from": "http", "to": "apply", "label": "apply-url", "fromSide": "bottom", "toSide": "right" },
+    { "id": "app-apply", "from": "clientApp", "to": "apply", "variant": "emphasis" },
+    { "id": "public-verify", "from": "public", "to": "verify", "label": "ключ", "variant": "security", "fromSide": "bottom", "toSide": "right" },
+    { "id": "apply-verify", "from": "apply", "to": "verify", "label": "підпис", "variant": "security" },
+    { "id": "verify-mat", "from": "verify", "to": "materialize", "label": "ok", "variant": "emphasis" },
+    { "id": "mat-install", "from": "materialize", "to": "install", "label": "rename", "variant": "emphasis" }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "Межа довіри",
+      "items": [
+        "*.secret лишається лише в середовищі публікації",
+        "*.public постачається разом із клієнтом",
+        "Конфіденційності й обфускації немає: формат 2 навмисно прозорий",
+        "Автентичність дає підпис, цілісність — SHA-512 кожного файла"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Чому інкрементно",
+      "items": [
+        "Блоби адресуються вмістом: однакові файли дають один blob",
+        "apply пропускає файл, чий SHA-512 уже збігається",
+        "Розбіжність хешу валить оновлення з HashMismatch"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Два боки одного формату",
+      "items": [
+        "CLI має й команди apply та apply-url для перевірки каналу",
+        "Застосунок вбудовує бібліотеку: apply_from_dir, apply_from_url",
+        "safe_join відкидає шляхи з .. і абсолютні",
+        "Приховані файли й теки з крапки під час публікації пропускаються"
+      ]
+    }
+  ]
+}
