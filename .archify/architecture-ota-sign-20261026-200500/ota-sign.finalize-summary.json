@@ -6,12 +6,12 @@
   "type": "architecture",
   "quality": "showcase",
   "specification": {
-    "path": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\candidate.json",
+    "path": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\candidate.json",
     "sha256": "f4096ba57be38be54b6211b4e51841a66791f24a09f5c97963f5ca613aab5cb6",
     "bytes": 7648
   },
   "artifact": {
-    "path": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+    "path": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
     "sha256": "da54e72d0236da34119be69adfa3f668cd5ed4599b6361406210698da58e2402",
     "bytes": 841762
   },
@@ -24,17 +24,20 @@
   "failedStage": "browser-check",
   "diagnostics": [
     {
-      "code": "viewer/browser-check-runtime",
+      "code": "viewer/evidence-path-conflict",
       "severity": "error",
-      "message": "browser-check could not complete its Chrome inspection.",
+      "message": "browser-check will not replace the existing unowned evidence path \"C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.browser-check.json\".",
       "subject": {
-        "artifact": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html"
+        "artifact": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+        "evidencePath": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.browser-check.json"
       },
       "evidence": {
-        "reason": "Chrome DevTools write pipe failed: stream closed\nChrome process: still running.\nWindows browser startup may have relaunched before connecting to the DevTools pipe. Retry from a non-elevated PowerShell opened normally, outside an elevated or compatibility-mode parent. Archify does not disable browser de-elevation or the sandbox to preserve pipe handles.\nChrome transport: Node v26.5.0, libuv 1.52.1, win32; pid=25052, exitCode=null, signalCode=null.\nChrome read pipe: readable=true, ended=false, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=false, ended=true, destroyed=true, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+        "reason": {
+          "code": "ownership-sidecar-path-mismatch"
+        }
       },
       "supportedFixes": [
-        "resolve the reported Chrome inspection error, then rerun browser-check"
+        "move the conflicting file aside, or choose a separate --out-dir, then rerun browser-check"
       ]
     }
   ],
@@ -44,9 +47,9 @@
     "truncated": false
   },
   "evidence": {
-    "receipt": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.finalize.json",
-    "summaryReceipt": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.finalize-summary.json",
-    "browserCheckReceipt": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.browser-check.json"
+    "receipt": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.finalize.json",
+    "summaryReceipt": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.browser-check.json"
   },
   "update": {
     "status": "current",
@@ -59,7 +62,7 @@
     "noticeText": null
   },
   "visualReview": "not-requested",
-  "durationMs": 1801,
+  "durationMs": 1816,
   "browserCheck": {
     "requested": true,
     "ran": false

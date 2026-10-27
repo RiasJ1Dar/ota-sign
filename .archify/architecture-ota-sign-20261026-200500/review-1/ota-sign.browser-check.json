@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "browser-check",
+  "evidenceKind": "automated-browser",
+  "status": "fail",
+  "visualReview": "not-requested",
+  "provenance": "invalid",
+  "artifact": {
+    "path": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+    "sha256": "da54e72d0236da34119be69adfa3f668cd5ed4599b6361406210698da58e2402",
+    "bytes": 841762
+  },
+  "error": "Delivery provenance could not be verified.",
+  "diagnostics": [
+    {
+      "code": "delivery/provenance-invalid",
+      "severity": "error",
+      "message": "Delivery provenance could not be verified.",
+      "subject": {
+        "artifact": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+        "provenance": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.delivery.json"
+      },
+      "evidence": {
+        "reason": "The recorded delivery output does not identify this artifact.",
+        "recordedOutput": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+        "pathIdentity": {
+          "code": "file-identity-different",
+          "operation": "same-entry",
+          "method": "bigint-stat"
+        }
+      },
+      "supportedFixes": [
+        "restore access to the delivery records, then rerun deliver successfully"
+      ]
+    }
+  ],
+  "containment": {
+    "status": "fail",
+    "policy": "fit-or-reader-declared-readable-vertical-scroll",
+    "viewports": []
+  },
+  "captures": {
+    "status": "not-requested",
+    "screenshots": [],
+    "contactSheet": null
+  },
+  "sidecars": {
+    "directory": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\review-1",
+    "receipt": "ota-sign.browser-check.json",
+    "files": []
+  }
+}

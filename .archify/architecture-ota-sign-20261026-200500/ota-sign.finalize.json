@@ -5,14 +5,14 @@
   "status": "fail",
   "type": "architecture",
   "quality": "showcase",
-  "startedAt": "2026-10-26T17:50:34.525Z",
+  "startedAt": "2026-10-27T06:07:13.070Z",
   "specification": {
-    "path": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\candidate.json",
+    "path": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\candidate.json",
     "sha256": "f4096ba57be38be54b6211b4e51841a66791f24a09f5c97963f5ca613aab5cb6",
     "bytes": 7648
   },
   "artifact": {
-    "path": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+    "path": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
     "sha256": "da54e72d0236da34119be69adfa3f668cd5ed4599b6361406210698da58e2402",
     "bytes": 841762
   },
@@ -27,12 +27,12 @@
         "C:\\Users\\Public\\archify-skill\\bin\\archify.mjs",
         "deliver",
         "architecture",
-        "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\candidate.json",
-        "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+        "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\candidate.json",
+        "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
         "--quality",
         "showcase",
         "--repo-root",
-        "C:\\Users\\Public\\archify-20261026\\ota-sign",
+        "C:\\Users\\Public\\archify-push\\ota-sign",
         "--json"
       ],
       "receipt": {
@@ -56,28 +56,28 @@
     "deliver": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 950,
+      "durationMs": 1019,
       "command": [
         "C:\\Program Files\\nodejs\\node.exe",
         "C:\\Users\\Public\\archify-skill\\bin\\archify.mjs",
         "deliver",
         "architecture",
-        "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\candidate.json",
-        "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+        "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\candidate.json",
+        "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
         "--quality",
         "showcase",
         "--repo-root",
-        "C:\\Users\\Public\\archify-20261026\\ota-sign",
+        "C:\\Users\\Public\\archify-push\\ota-sign",
         "--json"
       ],
       "receipt": {
         "schemaVersion": 1,
-        "receiptId": "72935ceb-b7eb-4301-84a9-4e2bba015d14",
+        "receiptId": "480a9e52-e709-41a6-9165-9e718124e84f",
         "ok": true,
         "command": "deliver",
         "type": "architecture",
-        "input": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\candidate.json",
-        "output": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+        "input": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\candidate.json",
+        "output": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
         "specification": {
           "sha256": "f4096ba57be38be54b6211b4e51841a66791f24a09f5c97963f5ca613aab5cb6",
           "bytes": 7648
@@ -116,17 +116,17 @@
     "check": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 249,
+      "durationMs": 262,
       "command": [
         "C:\\Program Files\\nodejs\\node.exe",
         "C:\\Users\\Public\\archify-skill\\bin\\archify.mjs",
         "check",
-        "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+        "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
         "--require-provenance"
       ],
       "receipt": {
         "ok": true,
-        "file": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+        "file": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
         "artifact": {
           "sha256": "da54e72d0236da34119be69adfa3f668cd5ed4599b6361406210698da58e2402",
           "bytes": 841762
@@ -314,18 +314,18 @@
           "issues": []
         },
         "provenance": "current",
-        "deliveryReceiptId": "72935ceb-b7eb-4301-84a9-4e2bba015d14"
+        "deliveryReceiptId": "480a9e52-e709-41a6-9165-9e718124e84f"
       }
     },
     "browser-check": {
       "status": "fail",
       "exitCode": 1,
-      "durationMs": 192,
+      "durationMs": 59,
       "command": [
         "C:\\Program Files\\nodejs\\node.exe",
         "C:\\Users\\Public\\archify-skill\\bin\\archify.mjs",
         "browser-check",
-        "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+        "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
         "--json",
         "--require-provenance"
       ],
@@ -338,9 +338,9 @@
         "status": "fail",
         "visualReview": "not-requested",
         "provenance": "current",
-        "deliveryReceiptId": "72935ceb-b7eb-4301-84a9-4e2bba015d14",
+        "deliveryReceiptId": "480a9e52-e709-41a6-9165-9e718124e84f",
         "artifact": {
-          "path": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+          "path": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
           "sha256": "da54e72d0236da34119be69adfa3f668cd5ed4599b6361406210698da58e2402",
           "bytes": 841762
         },
@@ -349,22 +349,25 @@
           "motion": "still"
         },
         "chrome": {
-          "status": "available",
-          "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+          "status": "not-checked",
+          "executable": null
         },
         "diagnostics": [
           {
-            "code": "viewer/browser-check-runtime",
+            "code": "viewer/evidence-path-conflict",
             "severity": "error",
-            "message": "browser-check could not complete its Chrome inspection.",
+            "message": "browser-check will not replace the existing unowned evidence path \"C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.browser-check.json\".",
             "subject": {
-              "artifact": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html"
+              "artifact": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+              "evidencePath": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.browser-check.json"
             },
             "evidence": {
-              "reason": "Chrome DevTools write pipe failed: stream closed\nChrome process: still running.\nWindows browser startup may have relaunched before connecting to the DevTools pipe. Retry from a non-elevated PowerShell opened normally, outside an elevated or compatibility-mode parent. Archify does not disable browser de-elevation or the sandbox to preserve pipe handles.\nChrome transport: Node v26.5.0, libuv 1.52.1, win32; pid=25052, exitCode=null, signalCode=null.\nChrome read pipe: readable=true, ended=false, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=false, ended=true, destroyed=true, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+              "reason": {
+                "code": "ownership-sidecar-path-mismatch"
+              }
             },
             "supportedFixes": [
-              "resolve the reported Chrome inspection error, then rerun browser-check"
+              "move the conflicting file aside, or choose a separate --out-dir, then rerun browser-check"
             ]
           }
         ],
@@ -395,7 +398,7 @@
           "receipt": "ota-sign.browser-check.json",
           "files": []
         },
-        "error": "Chrome DevTools write pipe failed: stream closed\nChrome process: still running.\nWindows browser startup may have relaunched before connecting to the DevTools pipe. Retry from a non-elevated PowerShell opened normally, outside an elevated or compatibility-mode parent. Archify does not disable browser de-elevation or the sandbox to preserve pipe handles.\nChrome transport: Node v26.5.0, libuv 1.52.1, win32; pid=25052, exitCode=null, signalCode=null.\nChrome read pipe: readable=true, ended=false, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=false, ended=true, destroyed=true, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+        "error": "browser-check will not replace the existing unowned evidence path \"C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.browser-check.json\"."
       }
     }
   },
@@ -405,29 +408,32 @@
   },
   "diagnostics": [
     {
-      "code": "viewer/browser-check-runtime",
+      "code": "viewer/evidence-path-conflict",
       "severity": "error",
-      "message": "browser-check could not complete its Chrome inspection.",
+      "message": "browser-check will not replace the existing unowned evidence path \"C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.browser-check.json\".",
       "subject": {
-        "artifact": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html"
+        "artifact": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.html",
+        "evidencePath": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.browser-check.json"
       },
       "evidence": {
-        "reason": "Chrome DevTools write pipe failed: stream closed\nChrome process: still running.\nWindows browser startup may have relaunched before connecting to the DevTools pipe. Retry from a non-elevated PowerShell opened normally, outside an elevated or compatibility-mode parent. Archify does not disable browser de-elevation or the sandbox to preserve pipe handles.\nChrome transport: Node v26.5.0, libuv 1.52.1, win32; pid=25052, exitCode=null, signalCode=null.\nChrome read pipe: readable=true, ended=false, destroyed=false, receivedBytes=0, messages=0, bufferedBytes=0.\nChrome write pipe: writable=false, ended=true, destroyed=true, completedWrites=1, writtenBytes=50, bufferedBytes=0."
+        "reason": {
+          "code": "ownership-sidecar-path-mismatch"
+        }
       },
       "supportedFixes": [
-        "resolve the reported Chrome inspection error, then rerun browser-check"
+        "move the conflicting file aside, or choose a separate --out-dir, then rerun browser-check"
       ]
     }
   ],
   "evidence": {
-    "receipt": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.finalize.json",
-    "summaryReceipt": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.finalize-summary.json",
-    "browserCheckReceipt": "C:\\Users\\Public\\archify-20261026\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.browser-check.json"
+    "receipt": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.finalize.json",
+    "summaryReceipt": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\Public\\archify-push\\ota-sign\\.archify\\architecture-ota-sign-20261026-200500\\ota-sign.browser-check.json"
   },
   "visualReview": "not-requested",
   "failedStage": "browser-check",
-  "finishedAt": "2026-10-26T17:50:36.326Z",
-  "durationMs": 1801,
+  "finishedAt": "2026-10-27T06:07:14.886Z",
+  "durationMs": 1816,
   "update": {
     "status": "current",
     "installedVersion": "3.2.0",
